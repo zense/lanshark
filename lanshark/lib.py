@@ -50,7 +50,7 @@ socket.getaddrinfo = cached(config.CACHE_TIMEOUT, stats=config.debug)(
 @cached()
 def guess_ip():
     """guess the public ip of the system"""
-    if "win" in sys.platform:
+    if sys.platform.startswith("win"):
         return socket.gethostbyname(socket.gethostname())
     else:
         process = "/sbin/ifconfig"

@@ -170,7 +170,7 @@ class Config(configuration.Config):
     def save(self, path=None):
         configuration.Config.save(self, path or self.path)
 
-if "win" in sys.platform:
+if sys.platform.startswith("win"):
     # portable
     config_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),
         "..", "..", "conf"))
