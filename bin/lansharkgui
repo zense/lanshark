@@ -132,7 +132,7 @@ def make_table(widgets):
 def idle_do(func, *args):
     """wrapper arround idle_add that will always run once"""
     def wrapper(*args):
-        with gtklock:
+        with gtklock():
             func(*args)
     gobject.idle_add(wrapper, *args)
 
@@ -916,7 +916,7 @@ class Downloader(threading.Thread):
             idle_do(self.model.remove, treeiter)
             time.sleep(0.1)
         else:
-            with gtklock:
+            with gtklock():
                 # this is duplicated because this is the better way
                 # but it doesnt work on windows
                 self.url = self.model.get_value(treeiter, 0)
