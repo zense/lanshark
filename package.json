@@ -1,0 +1,45 @@
+{
+  "name": "media_hub",
+  "version": "1.0.0",
+  "description": "File sharing on the LAN",
+  "main": "public/main.js",
+  "scripts": {
+    "electron": "electron .",
+    "bundle-server": "webpack -d && webpack-dev-server --content-base public/ --inline --port 1234 --history-api-fallback",
+    "bundle": "webpack -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zense/media_hub.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zense/media_hub/issues"
+  },
+  "homepage": "https://github.com/zense/media_hub#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "file-loader": "^1.1.6",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "electron": "^1.7.10",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.77.2"
+  }
+}
