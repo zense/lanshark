@@ -4,6 +4,7 @@
   "description": "File sharing on the LAN",
   "main": "public/main.js",
   "scripts": {
+    "electron-dev": "ELECTRON_ENV=development electron .",
     "electron": "electron .",
     "bundle-server": "webpack -d && webpack-dev-server --content-base public/ --inline --port 1234 --history-api-fallback",
     "bundle": "webpack -d",
