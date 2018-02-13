@@ -6,7 +6,9 @@
   "scripts": {
     "electron": "electron .",
     "bundle-server": "webpack -d && webpack-dev-server --content-base public/ --inline --port 1234 --history-api-fallback",
-    "bundle": "webpack -d"
+    "bundle": "webpack -d",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "homepage": "https://github.com/zense/media_hub#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.2.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
@@ -27,6 +30,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.9",
     "file-loader": "^1.1.6",
+    "jest": "^22.2.2",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
@@ -40,6 +44,10 @@
     "loglevel": "^1.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.77.2"
   }
