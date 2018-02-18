@@ -14,7 +14,7 @@ import * as log from 'loglevel';
 */
 export default function runPythonScript(params) {
     return new Promise(function(resolve, reject) {
-        var shell = false;
+        let shell = false;
         // Creating a shell is required in Windows. In UNIX systems
         // its faster if 'shell' is set to 'false'.
         if (process.platform === "win32") shell = true;
@@ -28,7 +28,7 @@ export default function runPythonScript(params) {
             shell: shell
         }).on("exit", function() {
             // On exit event extract output
-            var output = this.stdout.read();
+            let output = this.stdout.read();
 
             // If output exists then convert it to string
             // and resolve Promise to output
