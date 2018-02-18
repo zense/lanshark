@@ -13,32 +13,30 @@ import * as log from 'loglevel';
       resolved to error.
 */
 export default function runPythonScript(params) {
-    return new Promise(function(resolve, reject) {
-        let shell = false;
-        // Creating a shell is required in Windows. In UNIX systems
-        // its faster if 'shell' is set to 'false'.
-        if (process.platform === "win32") shell = true;
+  return new Promise(((resolve, reject) => {
+    let shell = false;
+    // Creating a shell is required in Windows. In UNIX systems
+    // its faster if 'shell' is set to 'false'.
+    if (process.platform === 'win32') shell = true;
 
-        log.debug(
-            "Command executed in runPythonScript: ",
-            `python ${params}`
-        );
+    log.debug(
+      'Command executed in runPythonScript: ',
+      `python ${params}`,
+    );
 
-        spawn("python", params, {
-            shell: shell
-        }).on("exit", function() {
-            // On exit event extract output
-            let output = this.stdout.read();
+    spawn('python', params, {
+      shell,
+    }).on('exit', function exitHandler() {
+      // On exit event extract output
+      const output = this.stdout.read();
 
-            // If output exists then convert it to string
-            // and resolve Promise to output
-            if (output)
-                resolve(output.toString());
-            else resolve("");
-        }).on("error", function(err) {
-            // An 'exit' event might not be emitted for all errors
-            // In case of error reject Promise
-            reject(err);
-        });
+      // If output exists then convert it to string
+      // and resolve Promise to output
+      if (output) { resolve(output.toString()); } else resolve('');
+    }).on('error', (err) => {
+      // An 'exit' event might not be emitted for all errors
+      // In case of error reject Promise
+      reject(err);
     });
+  }));
 }

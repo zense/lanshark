@@ -22,10 +22,8 @@ const PATH_DAEMON = path.join(__dirname, 'lanshark', 'daemon.py');
 
   TODO: Fix error handling and I/O
 */
-export function startDaemon() {
-    return runPythonScript([PATH_DAEMON]).then(function() {
-        log.info(
-            "lansharkInterface.js/startDaemon: Start daemon script executed."
-        );
-    });
+export function startDaemon() {     // eslint-disable-line
+  return runPythonScript([PATH_DAEMON]).then(() => {
+    log.info('lansharkInterface.js/startDaemon: Start daemon script executed.');
+  });
 }

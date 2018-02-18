@@ -17,7 +17,7 @@ const pathToSrc = remote.getGlobal('pathToSrc');
 const pathLansharkBinary = path.join(pathToSrc, 'lanshark');
 
 export const lansharkd = path.join(pathLansharkBinary, 'daemon.py');
-log.debug("util/resources.js lansharkd: ", lansharkd);
+log.debug('util/resources.js lansharkd: ', lansharkd);
 
 export const lansharkc = path.join(pathLansharkBinary, 'client.py');
-log.debug("util/resources.js lansharkc: ", lansharkc);
+log.debug('util/resources.js lansharkc: ', lansharkc);

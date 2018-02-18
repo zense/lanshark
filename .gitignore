@@ -1,6 +1,5 @@
 *.pyc
 *.po~
-.*
 build
 dist
 node_modules

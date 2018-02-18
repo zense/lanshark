@@ -22,25 +22,23 @@ import * as resources from 'utils/resources';
       empty error.
 */
 export function discover() {
-    return runPythonScript([
-        resources.lansharkc,
-        'discover'
-    ]).then(function(hosts) {
-        log.info(
-            "lansharkInterface.js/discover: Recieved available hosts list"
-        );
-        log.debug(hosts);
+  return runPythonScript([
+    resources.lansharkc,
+    'discover',
+  ]).then((hosts) => {
+    log.info('lansharkInterface.js/discover: Recieved available hosts list');
+    log.debug(hosts);
 
-        return JSON.parse(hosts);
-    }).catch(function(err) {
-        log.error(
-            "An error occured in lansharkInterface.js/discover: ",
-            err
-        );
+    return JSON.parse(hosts);
+  }).catch((err) => {
+    log.error(
+      'An error occured in lansharkInterface.js/discover: ',
+      err,
+    );
 
-        // Return a valid result to prevent errors in calling functions
-        return [];
-    });
+    // Return a valid result to prevent errors in calling functions
+    return [];
+  });
 }
 
 /*
@@ -61,26 +59,26 @@ export function discover() {
       empty array.
 */
 export function ls(url) {
-    return runPythonScript([
-        resources.lansharkc,
-        'ls',
-        url
-    ]).then(function(listing) {
-        log.info("lansharkInterface.js/ls: Recieved listing of ", url);
-        log.debug(listing);
+  return runPythonScript([
+    resources.lansharkc,
+    'ls',
+    url,
+  ]).then((listing) => {
+    log.info('lansharkInterface.js/ls: Recieved listing of ', url);
+    log.debug(listing);
 
-        // Convert to JS Array
-        return JSON.parse(listing);
-    }).catch(function(err) {
-        // Catch and log any errors
-        log.error(
-            "lansharkInterface.js/ls: ",
-            err
-        );
+    // Convert to JS Array
+    return JSON.parse(listing);
+  }).catch((err) => {
+    // Catch and log any errors
+    log.error(
+      'lansharkInterface.js/ls: ',
+      err,
+    );
 
-        // Return a valid result to prevent errors in calling functions
-        return [];
-    });
+    // Return a valid result to prevent errors in calling functions
+    return [];
+  });
 }
 
 /*
@@ -96,22 +94,22 @@ export function ls(url) {
     empty array.
 */
 export function search(searchString) {
-    return runPythonScript([
-        resources.lansharkc,
-        'search',
-        searchString
-    ]).then(function(matches) {
-        log.info("lanshark/Interface.jsRecieved matches for search: ", searchString);
-        log.debug(matches);
+  return runPythonScript([
+    resources.lansharkc,
+    'search',
+    searchString,
+  ]).then((matches) => {
+    log.info('lanshark/Interface.jsRecieved matches for search: ', searchString);
+    log.debug(matches);
 
-        return JSON.parse(matches);
-    }).catch(function(err) {
-        log.error(
-            "An error occurred in lansharkInterface.js/search: ",
-            err
-        );
+    return JSON.parse(matches);
+  }).catch((err) => {
+    log.error(
+      'An error occurred in lansharkInterface.js/search: ',
+      err,
+    );
 
-        // Return a valid result to prevent errors in calling functions
-        return [];
-    });
+    // Return a valid result to prevent errors in calling functions
+    return [];
+  });
 }
