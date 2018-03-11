@@ -9,9 +9,9 @@ discover
 
 // Mock of ls function
 // A list containing 2 files and 2 directories is returned
-export const ls = jest.fn(url => ([
+export const ls = jest.fn(url => (Promise.resolve([
   [`${url}file1`, 500, null],
   [`${url}file2`, 500, null],
-  [`${url}dir1`, [2, 2], null],
-  [`${url}dir2`, [2, 2], null],
-]));
+  [`${url}dir1/`, [2, 2], null],
+  [`${url}dir2/`, [2, 2], null],
+])));

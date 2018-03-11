@@ -90,7 +90,7 @@ function files(state = {}, action) {
         }, {});
     }
 
-    case 'RECIEVE_DIRECTORY_LISTING': {
+    case 'RECIEVE_FILE_LISTING': {
       const { origin: host } = new URL(action.url);
 
       return Object.assign({}, state, {

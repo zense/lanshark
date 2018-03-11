@@ -5,7 +5,9 @@
 
 import { combineReducers } from 'redux';
 import hostList from 'reducers/hosts/hostList';
+import files from 'reducers/hosts/files';
 
 export default combineReducers({
   hostList,
+  files,
 });

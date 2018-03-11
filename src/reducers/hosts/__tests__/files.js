@@ -75,7 +75,7 @@ describe('files reducer', () => {
     const host = 'http://host2';
 
     const action = {
-      type: 'RECIEVE_DIRECTORY_LISTING',
+      type: 'RECIEVE_FILE_LISTING',
       url: `${host}/`,
       fileList: [
         [`${host}/dir1/`, [1, 1], null],
@@ -104,7 +104,7 @@ describe('files reducer', () => {
     const host = 'http://host3';
 
     const action = {
-      type: 'RECIEVE_DIRECTORY_LISTING',
+      type: 'RECIEVE_FILE_LISTING',
       url: `${host}/dir1/`,
       fileList: [
         [`${host}/dir1/dir2/`, [0, 2], null],
@@ -136,7 +136,7 @@ describe('files reducer', () => {
     const host = 'http://host2';
 
     const action = {
-      type: 'RECIEVE_DIRECTORY_LISTING',
+      type: 'RECIEVE_FILE_LISTING',
       url: `${host}/`,
       fileList: [
         [`${host}/dir2/`, [1, 1], null],
