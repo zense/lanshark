@@ -5,8 +5,10 @@
   "main": "public/main.js",
   "scripts": {
     "electron": "electron .",
-    "bundle-server": "webpack -d && webpack-dev-server --content-base public/ --inline --port 1234 --history-api-fallback",
-    "bundle": "webpack -d"
+    "bundle-server":
+      "webpack -d && webpack-dev-server --content-base public/ --inline --port 1234 --history-api-fallback",
+    "bundle": "webpack -d",
+    "precommit": "pretty-quick --staged"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,10 @@
   },
   "dependencies": {
     "electron": "^1.7.10",
+    "husky": "^0.14.3",
     "loglevel": "^1.6.1",
+    "prettier": "^1.12.0",
+    "pretty-quick": "^1.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "semantic-ui-css": "^2.2.12",
